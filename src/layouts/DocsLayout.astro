@@ -1,23 +1,34 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import DocsSidebar from '../components/DocsSidebar.astro';
+import TableOfContents from '../components/TableOfContents.astro';
 import { getCollection } from 'astro:content';
 
 interface Props {
   title: string;
   description?: string;
+  headings?: { depth: number; slug: string; text: string }[];
 }
 
-const { title, description } = Astro.props;
+const { title, description, headings = [] } = Astro.props;
 
-// Get docs for mobile nav
+// Get docs for mobile nav + prev/next
 const docs = await getCollection('docs');
 const sorted = docs.sort((a, b) => a.data.order - b.data.order);
 const currentPath = Astro.url.pathname;
+
+// Find current doc index for prev/next
+const currentIndex = sorted.findIndex((doc) => {
+  const href = `/docs/${doc.id}`;
+  return currentPath === href || currentPath === `${href}/`;
+});
+const prevDoc = currentIndex > 0 ? sorted[currentIndex - 1] : null;
+const nextDoc = currentIndex < sorted.length - 1 ? sorted[currentIndex + 1] : null;
 ---
 
 <BaseLayout title={`${title} — KEEB Docs`} description={description}>
   <DocsSidebar />
+  <TableOfContents headings={headings} />
 
   <!-- Mobile nav -->
   <div class="mobile-nav">
@@ -48,14 +59,83 @@ const currentPath = Astro.url.pathname;
     <article class="prose">
       <slot />
     </article>
+
+    <nav class="docs-pager">
+      {prevDoc ? (
+        <a href={`/docs/${prevDoc.id}`} class="docs-pager__link docs-pager__link--prev">
+          <span class="docs-pager__label">Previous</span>
+          <span class="docs-pager__title">{prevDoc.data.title}</span>
+        </a>
+      ) : <div />}
+      {nextDoc ? (
+        <a href={`/docs/${nextDoc.id}`} class="docs-pager__link docs-pager__link--next">
+          <span class="docs-pager__label">Next</span>
+          <span class="docs-pager__title">{nextDoc.data.title}</span>
+        </a>
+      ) : <div />}
+    </nav>
   </main>
 </BaseLayout>
 
 <style>
   .docs-main {
     margin-left: 260px;
+    margin-right: 220px;
     padding: 3rem 2.5rem;
     min-height: 100vh;
+  }
+
+  @media (max-width: 1100px) {
+    .docs-main {
+      margin-right: 0;
+    }
+  }
+
+  /* Prev/Next pager */
+  .docs-pager {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--border-color);
+    max-width: 72ch;
+  }
+
+  .docs-pager__link {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--border-color);
+    text-decoration: none;
+    transition: border-color 0.1s, background 0.1s;
+    max-width: 45%;
+  }
+
+  .docs-pager__link:hover {
+    border-color: var(--purple-royal);
+    background: rgba(120, 81, 169, 0.08);
+  }
+
+  .docs-pager__link--next {
+    text-align: right;
+    margin-left: auto;
+  }
+
+  .docs-pager__label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .docs-pager__title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: var(--white);
+    letter-spacing: 0.04em;
   }
 
   /* Mobile nav */
@@ -68,6 +148,18 @@ const currentPath = Astro.url.pathname;
       margin-left: 0;
       padding: 1.5rem 1rem;
       padding-top: 4.5rem;
+    }
+
+    .docs-pager {
+      flex-direction: column;
+    }
+
+    .docs-pager__link {
+      max-width: 100%;
+    }
+
+    .docs-pager__link--next {
+      text-align: left;
     }
 
     .mobile-nav {

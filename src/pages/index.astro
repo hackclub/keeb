@@ -39,34 +39,14 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="faq">
-      <div class="faq__inner">
-        <h2 class="section-title">FAQ</h2>
-        <div class="faq__list">
-          <details class="faq__item">
-            <summary class="faq__question">Who can participate?</summary>
-            <p class="faq__answer">Anyone 18 or under.</p>
-          </details>
-          <details class="faq__item">
-            <summary class="faq__question">What do I get?</summary>
-            <p class="faq__answer">Everything you need to build a full mechanical keyboard: PCB, switches, keycaps, stabilizers, case, and cable.</p>
-          </details>
-          <details class="faq__item">
-            <summary class="faq__question">Do I need experience?</summary>
-            <p class="faq__answer">Nope. The guide walks you through every step.</p>
-          </details>
-          <details class="faq__item">
-            <summary class="faq__question">Can I work with a friend?</summary>
-            <p class="faq__answer">KEEB is a solo project. One kit per person.</p>
-          </details>
-          <details class="faq__item">
-            <summary class="faq__question">Can I combine this with another Hack Club project?</summary>
-            <p class="faq__answer">No double-dipping. KEEB is its own thing.</p>
-          </details>
-        </div>
-        <div class="faq__cta">
-          <Button href="/docs" variant="primary">GET STARTED</Button>
+    <!-- CTA Banner -->
+    <section class="cta-banner bg-grid-dense">
+      <div class="cta-banner__inner">
+        <h2 class="cta-banner__title">READY TO GET STARTED?</h2>
+        <p class="cta-banner__text">Check the docs, join the community, and start your build.</p>
+        <div class="cta-banner__buttons">
+          <a href="/docs" class="btn btn--primary">READ THE DOCS</a>
+          <a href="https://github.com/hackclub/keeb" target="_blank" rel="noopener noreferrer" class="btn btn--outline">VIEW ON GITHUB</a>
         </div>
       </div>
     </section>
@@ -77,8 +57,16 @@ import Footer from '../components/Footer.astro';
   <div id="easter-egg-overlay" class="egg-overlay" aria-hidden="true">
     <div class="egg-overlay__scanlines"></div>
     <div class="egg-overlay__content">
-      <p class="egg-overlay__title">KEEB</p>
-      <p class="egg-overlay__sub">go build something!</p>
+      <pre class="egg-overlay__ascii">
+ ██╗  ██╗███████╗███████╗██████╗
+ ██║ ██╔╝██╔════╝██╔════╝██╔══██╗
+ █████╔╝ █████╗  █████╗  ██████╔╝
+ ██╔═██╗ ██╔══╝  ██╔══╝  ██╔══██╗
+ ██║  ██╗███████╗███████╗██████╔╝
+ ╚═╝  ╚═╝╚══════╝╚══════╝╚═════╝
+      </pre>
+      <p class="egg-overlay__msg">// KEEB UNLOCKED</p>
+      <p class="egg-overlay__sub">you typed the magic word. now go build one.</p>
     </div>
   </div>
 </BaseLayout>
