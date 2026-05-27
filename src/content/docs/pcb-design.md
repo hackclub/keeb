@@ -6,13 +6,13 @@ order: 4
 
 Probably this will take up most of your time.
 
-## 1. Setting Up KiCAD
+## Setting Up KiCAD
 
 Just grab the latest version of KiCAD from their website.
 
 You should also install [marbastlib](https://github.com/ebastler/marbastlib), which is a library that allows you to use common keyboard-related components on your PCB.
 
-## 2. Designing Your Schematic
+## Designing Your Schematic
 
 The first step is to place the symbols that will be used. This is probably `RaspberryPi_Pico`, `SW_Push`, `MX_stab`, and `1N4148` (you will see where this comes in).
 
@@ -53,7 +53,7 @@ As a final step, you should annotate your schematic:
 ![](https://cdn.hackclub.com/019d5a64-00ca-7a8b-a6c2-54472a8aec7f/image.png)
 ![](https://cdn.hackclub.com/019d5a64-0303-73ac-9eae-925b731c66ff/image.png)
 
-## 3. Assigning Footprints
+## Assigning Footprints
 
 Now that you are done with your schematic, you need to assign footprints to your symbols. Use the `Assign Footprints` icon.
 
