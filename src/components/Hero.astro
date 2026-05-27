@@ -25,60 +25,28 @@ import KeyboardVisual from './KeyboardVisual.astro';
   <div class="hero__keyboard">
     <KeyboardVisual />
   </div>
-  <div class="hero__scroll-hint">
-    <span>SCROLL</span>
-    <div class="hero__scroll-line"></div>
-  </div>
 </section>
 
 <style>
+  @keyframes enter {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   .hero {
-    min-height: 100vh;
+    height: 100svh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 6rem 1.5rem 3rem;
+    padding: clamp(5rem, 12vh, 10rem) 1.5rem 0;
     position: relative;
     overflow: hidden;
-  }
-
-  /* Crosshatch texture in corner */
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 400px;
-    height: 400px;
-    background-image:
-      repeating-linear-gradient(
-        45deg,
-        transparent,
-        transparent 6px,
-        rgba(75, 0, 110, 0.12) 6px,
-        rgba(75, 0, 110, 0.12) 7px
-      );
-    pointer-events: none;
-  }
-
-  /* Bottom-left crosshatch */
-  .hero::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 350px;
-    height: 350px;
-    background-image:
-      repeating-linear-gradient(
-        -45deg,
-        transparent,
-        transparent 6px,
-        rgba(120, 81, 169, 0.1) 6px,
-        rgba(120, 81, 169, 0.1) 7px
-      );
-    pointer-events: none;
   }
 
   .hero__content {
@@ -89,10 +57,11 @@ import KeyboardVisual from './KeyboardVisual.astro';
   }
 
   .hero__title {
-    font-size: clamp(3rem, 10vw, 8rem);
+    font-size: clamp(2.5rem, 8vw, 6rem);
     line-height: 0.95;
     margin-bottom: 1.5rem;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.02em;
+    animation: enter 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 
   .hero__accent {
@@ -111,13 +80,14 @@ import KeyboardVisual from './KeyboardVisual.astro';
   }
 
   .hero__sub {
-    font-size: clamp(0.85rem, 1.5vw, 1.05rem);
+    font-size: clamp(0.8rem, 1.4vw, 1rem);
     color: var(--text-muted);
     margin-bottom: 2.5rem;
     line-height: 1.8;
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
+    animation: enter 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
   }
 
   .hero__cta {
@@ -125,53 +95,26 @@ import KeyboardVisual from './KeyboardVisual.astro';
     gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
+    animation: enter 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
   }
 
   .hero__keyboard {
-    margin-top: 3rem;
+    margin-top: clamp(1.5rem, 4vh, 3rem);
     position: relative;
     z-index: 1;
     width: 100%;
     max-width: 750px;
-  }
-
-  .hero__scroll-hint {
-    position: absolute;
-    bottom: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--text-muted);
-    font-size: 0.65rem;
-    letter-spacing: 0.3em;
-    z-index: 1;
-  }
-
-  .hero__scroll-line {
-    width: 1px;
-    height: 40px;
-    background: var(--purple-deep);
-    animation: scroll-pulse 2s ease-in-out infinite;
-  }
-
-  @keyframes scroll-pulse {
-    0%, 100% { opacity: 0.3; transform: scaleY(0.6); }
-    50% { opacity: 1; transform: scaleY(1); }
+    flex-shrink: 0;
+    animation: enter 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
   }
 
   @media (max-width: 768px) {
     .hero {
-      padding: 5rem 1rem 2rem;
-      min-height: auto;
+      padding: clamp(3rem, 8vh, 5rem) 1rem 0;
     }
 
     .hero__sub {
       font-size: 0.85rem;
-    }
-
-    .hero__scroll-hint {
-      display: none;
     }
   }
 </style>
