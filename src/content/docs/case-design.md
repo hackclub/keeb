@@ -4,7 +4,6 @@ description: How to design a 3D-printable case for your keyboard in Onshape.
 order: 5
 ---
 
-# Designing the Case
 ---
 ## Setting Up Onshape
 
