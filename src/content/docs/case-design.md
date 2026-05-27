@@ -4,7 +4,6 @@ description: How to design a 3D-printable case for your keyboard in Onshape.
 order: 5
 ---
 
----
 ## Setting Up Onshape
 
 First, you should make an Onshape account. Onshape is a web-based CAD program that is easy to use for this application. 
