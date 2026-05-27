@@ -2,23 +2,22 @@
    KEEB — Design System & Global Styles
    ======================================== */
 
-/* --- Google Fonts Import --- */
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Azeret+Mono:wght@400;500;700&display=swap');
 
 /* --- Custom Properties --- */
 :root {
-  --purple-deep: #4B006E;
-  --purple-royal: #7851A9;
-  --purple-light: #9B72CF;
-  --bg-dark: #0a0a0a;
-  --bg-card: #141414;
-  --text-primary: #f0e6d3;
-  --text-muted: #a89b8c;
-  --white: #ffffff;
-  --border-color: #2a2a2a;
+  --purple-deep: oklch(0.27 0.15 305);
+  --purple-royal: oklch(0.47 0.14 300);
+  --purple-light: oklch(0.58 0.12 298);
+  --bg-dark: oklch(0.08 0.006 305);
+  --bg-card: oklch(0.13 0.008 305);
+  --text-primary: oklch(0.92 0.03 80);
+  --text-muted: oklch(0.67 0.025 70);
+  --white: oklch(0.99 0 0);
+  --border-color: oklch(0.20 0.01 305);
 
-  --font-display: 'Bebas Neue', Impact, sans-serif;
-  --font-mono: 'Space Mono', 'Courier New', monospace;
+  --font-display: 'Chakra Petch', sans-serif;
+  --font-mono: 'Azeret Mono', monospace;
 
   --shadow-hard: 4px 4px 0 var(--purple-deep);
   --shadow-hard-sm: 2px 2px 0 var(--purple-deep);
@@ -62,44 +61,29 @@ body::after {
   background-size: 200px 200px;
 }
 
-/* --- Scanline Texture --- */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 9998;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 3px,
-    rgba(75, 0, 110, 0.025) 3px,
-    rgba(75, 0, 110, 0.025) 4px
-  );
-}
-
 /* --- Grid Pattern Background Utility --- */
 .bg-grid {
   background-image:
-    linear-gradient(rgba(75, 0, 110, 0.15) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(75, 0, 110, 0.15) 1px, transparent 1px);
+    linear-gradient(oklch(0.27 0.15 305 / 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, oklch(0.27 0.15 305 / 0.15) 1px, transparent 1px);
   background-size: 48px 48px;
 }
 
 .bg-grid-dense {
   background-image:
-    linear-gradient(rgba(120, 81, 169, 0.12) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(120, 81, 169, 0.12) 1px, transparent 1px);
+    linear-gradient(oklch(0.47 0.14 300 / 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, oklch(0.47 0.14 300 / 0.12) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
 /* --- Typography --- */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
-  font-weight: 400;
-  letter-spacing: 0.02em;
+  font-weight: 700;
+  letter-spacing: 0.04em;
   line-height: 1.1;
   color: var(--white);
+  text-transform: uppercase;
 }
 
 a {
@@ -139,7 +123,7 @@ img {
 /* --- Prose (Markdown Content) --- */
 .prose {
   max-width: 72ch;
-  font-size: 0.95rem;
+  font-size: 1rem;
   line-height: 1.75;
 }
 
@@ -151,14 +135,14 @@ img {
 }
 
 .prose h2 {
-  font-size: 1.8rem;
-  margin-top: 2.5rem;
+  font-size: 1.875rem;
+  margin-top: 3rem;
   margin-bottom: 0.75rem;
   color: var(--purple-light);
 }
 
 .prose h3 {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   margin-top: 2rem;
   margin-bottom: 0.5rem;
 }
@@ -182,17 +166,17 @@ img {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   padding: 0.15em 0.4em;
-  font-size: 0.85em;
+  font-size: 0.875em;
   color: var(--purple-light);
 }
 
 .prose pre {
-  background: #111 !important;
+  background: oklch(0.1 0.006 305) !important;
   border: 2px solid var(--border-color);
-  padding: 1.25rem;
+  padding: 1.5rem;
   margin-bottom: 1.5rem;
   overflow-x: auto;
-  font-size: 0.85rem;
+  font-size: 0.875rem;
   line-height: 1.5;
 }
 
@@ -204,8 +188,8 @@ img {
 }
 
 .prose blockquote {
-  border-left: 4px solid var(--purple-royal);
-  padding-left: 1rem;
+  background: oklch(0.47 0.14 300 / 0.08);
+  padding: 1rem 1.5rem;
   margin-bottom: 1rem;
   color: var(--text-muted);
   font-style: italic;
@@ -227,12 +211,12 @@ img {
 .prose th {
   background: var(--bg-card);
   font-family: var(--font-display);
-  font-size: 1.1rem;
+  font-size: 1.125rem;
   letter-spacing: 0.05em;
 }
 
 .prose tr:nth-child(even) {
-  background: rgba(75, 0, 110, 0.05);
+  background: oklch(0.27 0.15 305 / 0.05);
 }
 
 .prose a {
@@ -249,6 +233,17 @@ img {
   border: none;
   border-top: 2px solid var(--border-color);
   margin: 2rem 0;
+}
+
+/* --- Reduced Motion --- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* --- Utility --- */
