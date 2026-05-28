@@ -13,7 +13,7 @@ Follow this tutorial to make an Onshape account: [Onshape Education](https://www
 
 First, locate the create button on the top left of the screen:
 
-![Onshape Front page](https://cdn.hackclub.com/019e6ab6-da5a-7dda-a587-d0f9d1825a97/onshapefrontpage.png)
+![Onshape Front page](https://cdn.hackclub.com/019e6eda-af2c-7f76-880c-0fccf6bc3f02/onshape.png)
 
 Then select the document and name it something fun!
 
