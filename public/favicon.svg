@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <!-- Keycap outer shell -->
-  <rect x="2" y="4" width="28" height="26" rx="2" fill="#1a1a1a" stroke="#7851A9" stroke-width="1.5"/>
+  <rect x="2" y="4" width="28" height="26" rx="2" fill="#1a1a1a" stroke="#ec3750" stroke-width="1.5"/>
   <!-- Keycap top face (the part you press) -->
-  <rect x="5" y="6" width="22" height="18" rx="1" fill="#4B006E"/>
+  <rect x="5" y="6" width="22" height="18" rx="1" fill="#7a1929"/>
   <!-- Keycap highlight/bevel -->
-  <rect x="5" y="6" width="22" height="2" rx="1" fill="#9B72CF" opacity="0.4"/>
+  <rect x="5" y="6" width="22" height="2" rx="1" fill="#f07085" opacity="0.4"/>
   <!-- Letter K -->
   <text x="16" y="20" text-anchor="middle" font-family="'Bebas Neue', Impact, sans-serif" font-size="15" font-weight="bold" fill="#f0e6d3" letter-spacing="0.5">K</text>
   <!-- Bottom shadow of keycap -->
