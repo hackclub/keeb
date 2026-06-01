@@ -9,13 +9,14 @@ import KeyboardVisual from './KeyboardVisual.astro';
     <img class="photo" src="/Photos/KB1.png" alt="" style="--r: -6deg; --y: 2%" />
     <img class="photo" src="/Photos/KB3.png" alt="" style="--r: 4deg;  --y: 26%" />
     <img class="photo" src="/Photos/KB5.png" alt="" style="--r: -8deg; --y: 50%" />
+    <img class="photo" src="/Photos/KB7.png" alt="" style="--r: 5deg;  --y: 74%" />
   </div>
 
   <div class="hero__photos hero__photos--right" aria-hidden="true">
     <img class="photo" src="/Photos/KB2.png" alt="" style="--r: 7deg;  --y: 2%" />
-    <img class="photo" src="/Photos/KB4.png" alt="" style="--r: -5deg; --y: 22%" />
-    <img class="photo" src="/Photos/KB6.png" alt="" style="--r: 6deg;  --y: 44%" />
-    <img class="photo" src="/Photos/KB7.png" alt="" style="--r: -4deg; --y: 66%" />
+    <img class="photo" src="/Photos/KB4.png" alt="" style="--r: -5deg; --y: 26%" />
+    <img class="photo" src="/Photos/KB6.png" alt="" style="--r: 6deg;  --y: 50%" />
+    <img class="photo" src="/Photos/KB8.png" alt="" style="--r: -4deg; --y: 74%" />
   </div>
 
   <div class="hero__content">
@@ -38,6 +39,10 @@ import KeyboardVisual from './KeyboardVisual.astro';
   </div>
   <div class="hero__keyboard">
     <KeyboardVisual />
+  </div>
+
+  <div class="hero__strip">
+    <img src="/Photos/Group 1.png" alt="Keyboard builds" />
   </div>
 </section>
 
@@ -148,6 +153,23 @@ import KeyboardVisual from './KeyboardVisual.astro';
 
   .hero__photos--left .photo { right: 0.5rem; }
   .hero__photos--right .photo { left: 0.5rem; }
+
+  .hero__strip {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    line-height: 0;
+    z-index: 0;
+  }
+
+  .hero__strip img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
 
   @media (max-width: 1100px) {
     .hero__photos { display: none; }
