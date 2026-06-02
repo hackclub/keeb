@@ -4,9 +4,9 @@ description: How to get all your parts
 order: 2
 ---
 
-Here are all the parts that come with the kit! It should be enough for any keyboard you may want to make.
+Instead of a kit, you will create a BOM and we will give you a grant. You will buy your parts with this grant then assemble your keyboard.
 
-You're allowed to use other parts, but you'll have to source them yourself on your own money.
+Below is some easy parts for you to access, but your allowed to source other parts yourself! Try to keep this a cheap as possible.
 
 Feel like something should be included? Let me know and it might just make it into the next edition, if that ever happens.
 
