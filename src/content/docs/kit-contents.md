@@ -15,7 +15,7 @@ Feel like something should be included? Let me know and it might just make it in
 | Part | Notes |
 |------|-------|
 | [Orpheus Pico](https://orpheuspico.hackclub.com/) | Microcontroller |
-| MX-Style switches | |
+| [MX-Style switches](https://www.aliexpress.us/item/3256802192387196.html?gatewayAdapt=glo2usa4itemAdapt) | |
 | [EC11](https://www.alibaba.com/product-detail/EC11-rotary-15-20mm-Meihua-Bing_1600985459709.html) Rotary encoders | |
 | White blank DSA keycaps | |
 | [SK6812 MINI-E LEDs](https://www.lcsc.com/product-detail/C5149201.html?s_z=n_SK6812%2520MINI-E) | $5.55 if we order full reel |
