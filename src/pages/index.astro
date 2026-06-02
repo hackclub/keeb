@@ -11,14 +11,7 @@ import Footer from '../components/Footer.astro';
 
     <!-- How It Works -->
     <section class="how-it-works">
-      <img class="falling-key" src="/Photos/FallingKeys.png" alt="" aria-hidden="true" style="--x: 4%; --y: 10%; --r: -20deg; --s: 0.7" />
-      <img class="falling-key" src="/Photos/FallingKeys.png" alt="" aria-hidden="true" style="--x: 10%; --y: 60%; --r: 15deg; --s: 0.9" />
-      <img class="falling-key" src="/Photos/FallingKeys.png" alt="" aria-hidden="true" style="--x: 18%; --y: 30%; --r: 35deg; --s: 0.6" />
-      <img class="falling-key" src="/Photos/FallingKeys.png" alt="" aria-hidden="true" style="--x: 6%; --y: 80%; --r: -10deg; --s: 0.8" />
-      <img class="falling-key" src="/Photos/FallingKeys.png" alt="" aria-hidden="true" style="--x: 72%; --y: 8%; --r: 25deg; --s: 0.75" />
-      <img class="falling-key" src="/Photos/FallingKeys.png" alt="" aria-hidden="true" style="--x: 82%; --y: 45%; --r: -30deg; --s: 0.85" />
-      <img class="falling-key" src="/Photos/FallingKeys.png" alt="" aria-hidden="true" style="--x: 90%; --y: 15%; --r: 10deg; --s: 0.65" />
-      <img class="falling-key" src="/Photos/FallingKeys.png" alt="" aria-hidden="true" style="--x: 78%; --y: 75%; --r: -15deg; --s: 0.9" />
+      <img class="falling-key" src="/Photos/FallingKeys.png" alt="" aria-hidden="true" />
       <div class="how-it-works__inner">
         <h2 class="section-title">HOW IT WORKS</h2>
         <ol class="steps">
@@ -193,10 +186,10 @@ import Footer from '../components/Footer.astro';
 
   .falling-key {
     position: absolute;
-    left: var(--x);
-    top: var(--y);
-    width: 80px;
-    transform: rotate(var(--r)) scale(var(--s));
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     pointer-events: none;
     opacity: 0.9;
   }
