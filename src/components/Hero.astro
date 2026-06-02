@@ -172,6 +172,10 @@ import KeyboardVisual from './KeyboardVisual.astro';
 
   @media (max-width: 1100px) {
     .hero__photos { display: none; }
+    .hero__strip {
+      left: 1.5rem;
+      right: 1.5rem;
+    }
   }
 
   @media (max-width: 768px) {
@@ -181,6 +185,25 @@ import KeyboardVisual from './KeyboardVisual.astro';
 
     .hero__sub {
       font-size: 0.85rem;
+    }
+
+    .hero__strip {
+      display: none;
+    }
+
+    .hero__keyboard {
+      margin-top: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero__title {
+      font-size: clamp(2rem, 10vw, 3rem);
+    }
+
+    .hero__cta {
+      flex-direction: column;
+      align-items: center;
     }
   }
 </style>

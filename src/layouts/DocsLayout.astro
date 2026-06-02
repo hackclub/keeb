@@ -148,7 +148,7 @@ const nextDoc = currentIndex < sorted.length - 1 ? sorted[currentIndex + 1] : nu
     .docs-main {
       margin-left: 0;
       padding: 1.5rem 1rem;
-      padding-top: 4.5rem;
+      padding-top: 6.5rem;
     }
 
     .docs-pager {
@@ -236,6 +236,16 @@ const nextDoc = currentIndex < sorted.length - 1 ? sorted[currentIndex + 1] : nu
     .mobile-nav__link--active {
       color: var(--white);
       background: oklch(0.47 0.14 300 / 0.12);
+    }
+  }
+</style>
+
+<style is:global>
+  /* On docs pages at mobile, hide the global nav — the mobile-nav handles navigation */
+  @media (max-width: 768px) {
+    body:has(.mobile-nav) .nav,
+    body:has(.mobile-nav) .nav__flag {
+      display: none;
     }
   }
 </style>

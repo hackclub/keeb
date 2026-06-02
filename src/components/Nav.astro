@@ -83,13 +83,21 @@ import Button from './Button.astro';
   }
 
   @media (max-width: 480px) {
+    .nav__inner {
+      padding: 0.5rem 0.75rem 0.5rem 4rem;
+    }
+
+    .nav__logo {
+      font-size: 1.5rem;
+    }
+
     .nav__links {
       gap: 0.5rem;
     }
 
     .nav__links :global(.btn) {
       padding: 0.5rem 0.75rem;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
     }
   }
 </style>

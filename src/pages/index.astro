@@ -176,6 +176,10 @@ import Footer from '../components/Footer.astro';
 
 <style>
   /* --- CTA Banner --- */
+  .cta-banner {
+    padding: clamp(4rem, 8vh, 7rem) 1.5rem;
+  }
+
   .cta-banner__inner {
     text-align: center;
     max-width: 640px;
@@ -291,6 +295,18 @@ import Footer from '../components/Footer.astro';
   @media (max-width: 480px) {
     .step {
       grid-template-columns: 3rem 1fr;
+    }
+
+    .falling-key {
+      display: none;
+    }
+
+    .cta-banner__inner {
+      padding-top: 1rem;
+    }
+
+    .how-it-works {
+      padding: 3rem 1rem;
     }
   }
 
@@ -437,5 +453,16 @@ import Footer from '../components/Footer.astro';
     font-size: 0.85rem;
     color: var(--text-muted);
     letter-spacing: 0.05em;
+  }
+
+  @media (max-width: 480px) {
+    .egg-overlay__ascii {
+      font-size: 0.35rem;
+      line-height: 1.2;
+    }
+
+    .egg-overlay__content {
+      padding: 0 1rem;
+    }
   }
 </style>
