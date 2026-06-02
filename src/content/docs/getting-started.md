@@ -30,4 +30,4 @@ No prior experience required. If you can hold a soldering iron, you can do this.
 
 ## Next Steps
 
-Check out the [Parts List](/docs/parts-list) to see what's in the kit, then head to the [Build Guide](/docs/build-guide) when you're ready.
+Check out the [Parts List](/docs/kit-contents) to see what's in the kit, then head to the [Build Guide](/docs/pcb-design) when you're ready.
