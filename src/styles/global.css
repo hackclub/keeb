@@ -4,12 +4,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Azeret+Mono:wght@400;500;700&display=swap');
 
-@font-face {
-  font-family: 'KeyNormal';
-  src: url('/Font/KeyNormalCSd-MAYv.ttf') format('truetype');
-  font-display: swap;
-}
-
 /* --- Custom Properties --- */
 :root {
   --purple-deep: #7a1929;
