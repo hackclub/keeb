@@ -231,11 +231,14 @@ import Footer from '../components/Footer.astro';
     pointer-events: none;
     opacity: 0.9;
     transform: scale(0.8) translateX(-1cm);
+    z-index: 0;
   }
 
   .how-it-works__inner {
     max-width: 640px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
   }
 
   .section-title {
