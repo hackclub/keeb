@@ -33,7 +33,7 @@ The best way to model a case in a part studio is to bring the “context” of y
 
 ![Reference](https://cdn.hackclub.com/019e6abd-2afb-7606-947b-4a5efa2d2b60/Referencepic.png)
 
-CAD can be a little confusing when you start! Looking at simple tutorials online is a good way to get your bearings. The case can be simple. There should be two sides that either snap together or can be screwed together. Now it's up to your creativity, create a fun case that speaks to you! Make sure to keep it under 12x12 inches, otherwise it won't be printable.
+CAD can be a little confusing when you start! Looking at simple tutorials online is a good way to get your bearings. The case can be simple. There should be two sides that either snap together or can be screwed together. Now it's up to your creativity, create a fun case that speaks to you! If you make it more than 12x12 inches, you will need to split it when printing!
 
 ![Switches](https://cdn.hackclub.com/019e6abe-734b-77e7-86e0-e762896cb175/switchesreferecnec.png)
 

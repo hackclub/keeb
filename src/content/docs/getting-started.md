@@ -19,7 +19,7 @@ A fully functional 60% mechanical keyboard, including:
 ## How It Works
 
 1. **Read through these docs** — learn about the parts, the process, and what to expect
-2. **Follow the build guide** — step-by-step instructions from unboxing to typing
+2. **Follow the build guide** — step-by-step instructions from unboxing to typing. Then Add your own twist if you want! The crazier, the better.
 3. **We ship you the parts** — once you're ready, we send everything to your door
 4. **Build it** — solder, assemble, flash, and you've got a custom keyboard
 
