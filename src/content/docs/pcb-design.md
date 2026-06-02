@@ -67,7 +67,7 @@ Then select all the switches and assign them `PCM_marbastlib-mx:SW_MX_1u` footpr
 
 For the stabilizers, use the `PCM_marbastlib-mx:STAB_MX` footprints.
 
-## 4. Designing Your PCB Layout
+## Designing Your PCB Layout
 
 When you import your schematic into your PCB, it should look something like this:
 
