@@ -175,6 +175,40 @@ import Footer from '../components/Footer.astro';
 </script>
 
 <style>
+  /* --- CTA Banner --- */
+  .cta-banner__inner {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .cta-banner__title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+    display: inline-block;
+  }
+
+  .cta-banner__title::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: var(--purple-royal);
+    margin-top: 0.75rem;
+  }
+
+  .cta-banner__text {
+    margin-bottom: 2rem;
+  }
+
+  .cta-banner__buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
   /* --- How It Works --- */
   .how-it-works {
     padding: 4rem 1.5rem;
