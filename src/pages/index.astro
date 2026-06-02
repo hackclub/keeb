@@ -295,13 +295,15 @@ import Footer from '../components/Footer.astro';
     max-width: 45ch;
   }
 
+  @media (max-width: 1024px) {
+    .falling-key {
+      display: none;
+    }
+  }
+
   @media (max-width: 480px) {
     .step {
       grid-template-columns: 3rem 1fr;
-    }
-
-    .falling-key {
-      display: none;
     }
 
     .cta-banner__inner {
