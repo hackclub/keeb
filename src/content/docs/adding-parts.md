@@ -1,7 +1,7 @@
 ---
 title: Adding Extra Parts
 description: How to add RGB LEDs, rotary encoders, OLEDs, and more to your keyboard.
-order: 7
+order: 8
 ---
 
 The kit comes with more than just a few keyswitches! It comes with RGB LEDs, rotary encoders, sliders, a buzzer, joysticks, and an OLED screen!

@@ -1,7 +1,7 @@
 ---
 title: Writing Firmware
 description: How to set up and flash firmware for your custom keyboard.
-order: 6
+order: 7
 ---
 
 This guide will not cover how you should write your firmware in full detail. There are a bunch of other resources that cover this topic really well.

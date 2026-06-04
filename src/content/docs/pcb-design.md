@@ -1,7 +1,7 @@
 ---
 title: Designing the PCB
 description: Step-by-step guide to designing your keyboard PCB in KiCAD.
-order: 4
+order: 5
 ---
 
 Probably this will take up most of your time.

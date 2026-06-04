@@ -1,7 +1,7 @@
 ---
 title: Submitting
 description: How to submit your completed keyboard build.
-order: 8
+order: 9
 ---
 
 ## Submitting your Project!

@@ -1,7 +1,7 @@
 ---
 title: Grants
 description: How to get all your parts
-order: 2
+order: 3
 ---
 
 Instead of a kit, you will create a BOM and we will give you a grant. You will buy your parts with this grant then assemble your keyboard.

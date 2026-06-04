@@ -1,7 +1,7 @@
 ---
 title: Planning Your Keyboard
 description: Sketching out your keyboard design before you start building.
-order: 3
+order: 4
 ---
 
 The point of this step is for you to have a vision of what you want to make, so you can easily execute on your idea.
