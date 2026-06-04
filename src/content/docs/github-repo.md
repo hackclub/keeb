@@ -35,9 +35,10 @@ Your repo should document your entire build. As you work through the guide, keep
 
 ## Journaling 
 
-The ebst way to log hours is journaling! In your repo, add images every 1-4 hours, and describe what you have done for your project!
+The best way to log hours is journaling! In your repo, add images every 1-4 hours, and describe what you have done for your project!
 
-This is one of the most important steps because it allows us to verify that you did what was need
+This is one of the most **important** steps because it allows us to verify that you did your project. 
+
 
 ## Next Steps
 
