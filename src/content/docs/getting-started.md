@@ -30,4 +30,4 @@ No prior experience required. If you can hold a soldering iron, you can do this.
 
 ## Next Steps
 
-Check out the [Parts List](/docs/kit-contents) to see what's in the kit, then head to the [Build Guide](/docs/pcb-design) when you're ready.
+Start by [setting up your GitHub repo](/docs/github-repo), then check out the [Grants](/docs/kit-contents) page to see what parts are available.
