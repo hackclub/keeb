@@ -11,6 +11,7 @@ Probably this will take up most of your time.
 Just grab the latest version of KiCAD from their website.
 
 You should also install [marbastlib](https://github.com/ebastler/marbastlib), which is a library that allows you to use common keyboard-related components on your PCB.
+Once installed, restart KiCAD fully!
 
 ## Designing Your Schematic
 
@@ -89,8 +90,9 @@ Your PCB should look something like this after it's all laid out:
 
 For routing, you should use one layer for horizontal lines and one for vertical lines. This makes it a lot easier to route. This is not a strict rule, but you should follow it.
 
-![image](https://user-cdn.hackclub-assets.com/019d5f80-cb8f-7832-bc27-c838d27bac42/paste-1775423770762.png)
-
+![image](https://cdn.hackclub.com/019e944d-5ec4-74ca-b0cd-c3b093f3af74/Full%20wiring.png)
+![image](https://cdn.hackclub.com/019e944d-7bd5-7bfc-827b-b783aeb97c14/Pico%20Routing.png)
+![image](https://cdn.hackclub.com/019e944d-6f14-7b74-a063-b46dbcdcb443/General%20Red%20Routing.png)
 The USB port of the Pico should also hang off the PCB a little. This will make it easier to connect a USB cable:
 
 ![image](https://user-cdn.hackclub-assets.com/019d6389-830e-7423-b611-df54d0ae55e3/paste-1775491449889.png)
