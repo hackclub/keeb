@@ -11,9 +11,12 @@ Welcome to **Keeb** — a [Hack Club](https://hackclub.com) you-ship-we-ship pro
 A fully functional 60% mechanical keyboard, including:
 
 - **Custom PCB** — designed for this project
+- **Case & plate** — everything to house your board
+
+## What You'll Purchase
+
 - **Mechanical switches** — your choice of linear, tactile, or clicky
 - **Keycaps** — a clean, no-nonsense keycap set
-- **Case & plate** — everything to house your board
 - **USB-C cable** — to connect to your machine
 
 ## How It Works
