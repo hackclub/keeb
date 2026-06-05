@@ -13,7 +13,7 @@ A fully functional 60% mechanical keyboard, including:
 - **Custom PCB** — designed for this project
 - **Case & plate** — everything to house your board
 
-## What You'll Purchase
+## What You'll Purchase (With the Grant)
 
 - **Mechanical switches** — your choice of linear, tactile, or clicky
 - **Keycaps** — a clean, no-nonsense keycap set
