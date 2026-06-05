@@ -37,6 +37,10 @@ Then, with these *units*, you need to replicate the layout of your keyboard from
 
 ![](https://cdn.hackclub.com/019d5a20-13c5-794d-891f-65e7dc9524c6/image.png)
 
+The "COl#" and "ROW#" are using the tool called Net Labels. By adding these to each row of wires and also connecting them to the pico, it tells KiCAD that those lines connect when your are wiring, even if they dont physically connect right now.
+
+Also note that the little jumps that the rows do in the image arent always there. As long as the rows and columns aren't connecting, symbolized by the gree dots, you are all good!
+
 Then you should connect all of the rows and columns to the Pico. I used labels for this:
 
 ![](https://cdn.hackclub.com/019d5a2f-7776-72b7-b1be-2a70b4d8385e/image.png)
@@ -60,9 +64,11 @@ Now that you are done with your schematic, you need to assign footprints to your
 
 ![](https://cdn.hackclub.com/019d5a45-5db7-7166-a353-789bad1b1e10/image.png)
 
-For the Pico, use the `Module:RaspberryPi_Pico_Common_THT` footprint.
+Once on the page, select the Pico. Use the search bar, look up `Module:RaspberryPi_Pico_Common_THT`. Double click on the footprint under "Filtered Footprints"
 
-Select all the diodes and assign them `Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal` footprints.
+Then, select all of the diodes at once so you don't have to do it one by one. Next, look up `Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal`. Double click the footprint and it will assign it to all the diodes. 
+
+Repeat with the switches and stabilizers.
 
 Then select all the switches and assign them `PCM_marbastlib-mx:SW_MX_1u` footprints.
 
