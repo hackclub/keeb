@@ -76,7 +76,7 @@ When you import your schematic into your PCB, it should look something like this
 
 Now we only need to arrange our parts. Here are some tips that will make your life a bit easier.
 
-You should use a grid spacing of `0.79375mm`; this way everything should just snap in the right place:
+You can use whatever spacing works for you! 
 
 ![](https://cdn.hackclub.com/019d5a57-81bc-7464-b614-c262c1343e1c/image.png)
 
