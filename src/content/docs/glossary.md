@@ -4,7 +4,7 @@ description: Definitions for technical terms and jargon you'll encounter while b
 order: 2
 ---
 
-New to keyboards or electronics? This page breaks down the terms you'll run into throughout the docs.
+New to keyboards or electronics? This page breaks down the terms you'll run into throughout the docs. Click any term below to expand its definition.
 
 ## Electronics & PCB
 

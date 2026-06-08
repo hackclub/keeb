@@ -7,12 +7,10 @@ order: 3
 Instead of a kit, you will create a BOM and we will give you a grant. You will buy your parts with this grant then assemble your keyboard.
 
 Below is some easy parts for you to access, but you are allowed to source other parts yourself! Try to keep this as cheap as possible.
-
+th
 Feel like something should be included? Let me know and it might just make it into the next edition, if that ever happens.
 
 ## What are some options?
-
-Click any part name that is a link to view purchase options.
 
 | Part | Notes |
 |------|-------|
