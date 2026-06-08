@@ -11,7 +11,7 @@ New to keyboards or electronics? This page breaks down the terms you'll run into
 <details>
 <summary><strong>BOM (Bill of Materials)</strong></summary>
 
-A complete list of every part and component you need to buy to build your keyboard — quantities, part numbers, and where to get them.
+A complete list of every part and component you need to buy to build your keyboard: quantities, part numbers, and where to get them.
 
 </details>
 
@@ -32,14 +32,14 @@ A diagram showing how all the electrical components connect to each other. Think
 <details>
 <summary><strong>Footprint</strong></summary>
 
-The physical shape and pad layout of a component on the PCB — the actual spots where solder goes. Every component has both a schematic symbol (how it looks in the diagram) and a footprint (where it physically sits on the board).
+The physical shape and pad layout of a component on the PCB, specifically the spots where solder goes. Every component has both a schematic symbol (how it looks in the diagram) and a footprint (where it physically sits on the board).
 
 </details>
 
 <details>
 <summary><strong>Diode (1N4148)</strong></summary>
 
-A small electronic component that only lets current flow one direction. Keyboards use one diode per switch to prevent "ghosting" — where pressing multiple keys at once accidentally triggers extra keypresses.
+A small electronic component that only lets current flow one direction. Keyboards use one diode per switch to prevent "ghosting" are proccess where pressing multiple keys at once accidentally triggers extra keypresses.
 
 </details>
 
@@ -67,7 +67,7 @@ A label in KiCAD that electrically connects wires that aren't physically drawn t
 <details>
 <summary><strong>Through-hole</strong></summary>
 
-A type of electronic component where the legs (leads) go all the way through the PCB and are soldered on the back. Easier to hand-solder than surface-mount parts — most beginner-friendly keyboards use through-hole components.
+A type of electronic component where the legs (leads) go all the way through the PCB and are soldered on the back. Easier to hand-solder than surface-mount parts. most beginner-friendly keyboards use through-hole components.
 
 </details>
 
@@ -92,7 +92,7 @@ The small oval connector used to plug your keyboard into a computer. The Pico ha
 <details>
 <summary><strong>F.Cu / B.Cu</strong></summary>
 
-Front Copper and Back Copper — the two sides of the PCB where electrical traces are routed. Using both sides gives you more room to route wires without them crossing.
+Front Copper and Back Copper. The two sides of the PCB where electrical traces are routed. Using both sides gives you more room to route wires without them crossing.
 
 </details>
 
@@ -113,7 +113,7 @@ A protective coating over the copper traces that prevents accidental shorts. The
 <details>
 <summary><strong>Edge.Cuts</strong></summary>
 
-The KiCAD layer that defines the outer outline of your PCB — where the manufacturer cuts the board to shape.
+The KiCAD layer that defines the outer outline of your PCB: where the manufacturer cuts the board to shape.
 
 </details>
 
@@ -159,7 +159,7 @@ Software for creating 2D or 3D models of physical objects. Onshape is the CAD to
 <details>
 <summary><strong>Firmware</strong></summary>
 
-The software that runs on your Pico and defines how your keyboard behaves — which key does what, how LEDs work, etc. You write it once and flash it to the Pico.
+The software that runs on your Pico and defines how your keyboard behaves: which key does what, how LEDs work, etc. You write it once and flash it to the Pico.
 
 </details>
 
@@ -212,7 +212,7 @@ The mechanical component under each keycap that you physically press. Each keypr
 <details>
 <summary><strong>Keycap</strong></summary>
 
-The plastic cap you put on top of each switch — the part your fingers actually touch. Keycaps come in many colors, materials, and profiles.
+The plastic cap you put on top of each switch. It's the part your fingers actually touch. Keycaps come in many colors, materials, and profiles.
 
 </details>
 
@@ -226,21 +226,21 @@ A mechanical part that keeps wider keys (like spacebar or backspace) from wobbli
 <details>
 <summary><strong>2u</strong></summary>
 
-Short for "2 units" — a key that's twice as wide as a standard key. The spacebar, backspace, and shift keys on a 60% layout are typically 2u or larger.
+Short for "2 units", meaning a key that's twice as wide as a standard key. The spacebar, backspace, and shift keys on a 60% layout are typically 2u or larger.
 
 </details>
 
 <details>
 <summary><strong>MX-Style</strong></summary>
 
-Refers to the Cherry MX switch standard — the most common switch form factor. Most aftermarket switches, keycaps, and plates are designed around this standard.
+Refers to the Cherry MX switch standard, the most common switch form factor. Most aftermarket switches, keycaps, and plates are designed around this standard.
 
 </details>
 
 <details>
 <summary><strong>Linear Switch</strong></summary>
 
-A switch type with a smooth, consistent feel from top to bottom — no bump, no click. Popular for gaming and fast typing.
+A switch type with a smooth, consistent feel from top to bottom with no bump or click. Popular for gaming and fast typing.
 
 </details>
 
@@ -254,7 +254,7 @@ A switch type with a subtle physical bump partway through the press that gives y
 <details>
 <summary><strong>Clicky Switch</strong></summary>
 
-A switch type with both a tactile bump and an audible click sound. Satisfying but loud — not ideal in shared spaces.
+A switch type with both a tactile bump and an audible click sound. Satisfying but loud, so not ideal in shared spaces.
 
 </details>
 
@@ -275,7 +275,7 @@ A small display screen (Organic Light-Emitting Diode) that can be added to your 
 <details>
 <summary><strong>RGB LED (SK6812 MINI-E)</strong></summary>
 
-Small color-changing lights that can be added under or around keys for backlighting. SK6812 MINI-E is the specific addressable LED model commonly used — each one can be any color independently.
+Small color-changing lights that can be added under or around keys for backlighting. SK6812 MINI-E is the specific addressable LED model commonly used, and each one can be set to any color independently.
 
 </details>
 
@@ -314,14 +314,14 @@ A keyboard assembly style where the PCB sits inside a tray-shaped bottom case. O
 <details>
 <summary><strong>60% Keyboard</strong></summary>
 
-A keyboard with roughly 60% of the keys of a standard full-sized keyboard — typically 61–68 keys. No numpad, no function row, no arrow cluster. Compact and popular for custom builds.
+A keyboard with roughly 60% of the keys of a standard full-sized keyboard, typically 61 to 68 keys. No numpad, no function row, no arrow cluster. Compact and popular for custom builds.
 
 </details>
 
 <details>
 <summary><strong>Ortholinear</strong></summary>
 
-A keyboard layout where all keys are arranged in a perfectly straight grid — rows and columns line up exactly. Different from the slightly staggered layout of a standard keyboard.
+A keyboard layout where all keys are arranged in a perfectly straight grid, with rows and columns lining up exactly. Different from the slightly staggered layout of a standard keyboard.
 
 </details>
 
@@ -339,7 +339,7 @@ The configuration of what each key does. Your keymap tells the firmware "when ke
 <details>
 <summary><strong>Repository (Repo)</strong></summary>
 
-A folder on GitHub that contains all your project files — code, design files, photos, and documentation. Your entire keyboard project lives in one repo.
+A folder on GitHub that contains all your project files, including code, design files, photos, and documentation. Your entire keyboard project lives in one repo.
 
 </details>
 
@@ -353,7 +353,7 @@ The main documentation file (README.md) in your repo. It's what people see first
 <details>
 <summary><strong>Markdown</strong></summary>
 
-A simple plain-text format for writing formatted content. Files ending in `.md` use markdown — two asterisks around text **makes it bold**, a `#` starts a heading, etc.
+A simple plain-text format for writing formatted content. Files ending in `.md` use markdown. For example, two asterisks around text **makes it bold**, and a `#` starts a heading.
 
 </details>
 
