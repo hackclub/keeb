@@ -12,6 +12,8 @@ Feel like something should be included? Let me know and it might just make it in
 
 ## What are some options?
 
+Click any part name that is a link to view purchase options.
+
 | Part | Notes |
 |------|-------|
 | [Orpheus Pico](https://orpheuspico.hackclub.com/) | Microcontroller (Fancy Pi Pico) |
