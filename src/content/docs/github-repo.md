@@ -39,7 +39,9 @@ The best way to log hours is journaling! In your repo, add images every 1-4 hour
 
 This is one of the most **important** steps because it allows us to verify that you did your project. 
 
+If you want you can also use ![Lapse](https://lapse.hackclub.com/). This is optional however helps **YOU** track your time!
+
 
 ## Next Steps
 
-Repo ready? Head to [Grants](/docs/kit-contents) to see what parts are available, then move on to [Planning Your Keyboard](/docs/planning).
+Repo ready? Head to [Grants](/docs/kit-contents) to see what parts are allowed, then move on to [Planning Your Keyboard](/docs/planning).
