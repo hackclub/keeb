@@ -229,6 +229,17 @@ img {
   text-underline-offset: 3px;
 }
 
+.prose td a {
+  cursor: pointer;
+  display: inline-block;
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.prose td a:hover {
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+
 .prose img {
   border: 2px solid var(--border-color);
   margin: 1.5rem 0;
