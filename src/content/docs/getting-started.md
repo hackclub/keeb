@@ -21,7 +21,7 @@ A fully functional mechanical keyboard(We suggest a 60% or 65% layout if this is
 
 ## How It Works
 
-1. **Start a Github repo** — Create a Github repo where you will record all your process, uplaod your cad, and write a readme about your project./
+1. **Start a Github repo** — Create a Github repo where you will record all your process, uplaod your cad, and write a readme about your project.
 2. **Read through these docs** — learn about the parts, the process, and what to expect
 3. **Follow the build guide** — step-by-step instructions from unboxing to typing. Then Add your own twist if you want! The crazier, the better.
 4. **We ship you the parts** — once you're ready, we send everything to your door
