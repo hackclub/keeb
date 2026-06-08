@@ -71,10 +71,11 @@ Download and install the latest version of KiCAD from [kicad.org](https://www.ki
 
 marbastlib is a KiCAD library with pre-made symbols and footprints for keyboard components. Without it, you won't have access to the switch, stabilizer, or LED parts you need.
 
-1. Download the library from the [marbastlib GitHub repo](https://github.com/ebastler/marbastlib). Click **Code → Download ZIP** and extract it somewhere permanent (like `Documents/KiCAD/libraries/marbastlib`).
-2. Open KiCAD. In the main window, go to **Preferences → Manage Symbol Libraries**.
-3. Click the folder icon at the bottom to add a new library. Navigate to your marbastlib folder and select the `.kicad_sym` files. Add all of them.
-4. Now go to **Preferences → Manage Footprint Libraries** and repeat the process, this time selecting the `.pretty` folders.
+1. Go to [marbastlib GitHub repo](https://github.com/ebastler/marbastlib). Follow the instructions in the README.
+2. Open KiCAD. In the main window, go to **Plugin and content manager**.
+3. Under repostitroy, go to manage and hit the + symbol. Paste the url in the README.
+[KiCAD](https://cdn.hackclub.com/019ea7dc-7ca1-71d0-bf87-ffbbb29ef360/kicadlibrary.png)
+4. Then go switch to "ebastler KiCAD Repository", library, download. Then hit apply pending changes.
 5. Click **OK** and then **fully close and reopen KiCAD** for the libraries to load correctly.
 
 ---
