@@ -8,7 +8,7 @@ Welcome to **Keeb** — a [Hack Club](https://hackclub.com) you-ship-we-ship pro
 
 ## What You'll Build
 
-A fully functional 60% mechanical keyboard, including:
+A fully functional mechanical keyboard(We suggest a 60% or 65% layout if this is your first time), including:
 
 - **Custom PCB** — designed for this project
 - **Case & plate** — everything to house your board
@@ -33,4 +33,4 @@ No prior experience required. If you can hold a soldering iron, you can do this.
 
 ## Next Steps
 
-Start by [setting up your GitHub repo](/docs/github-repo), then check out the [Grants](/docs/kit-contents) page to see what parts are available.
+Start by [setting up your GitHub repo](/docs/github-repo), then check out the [Grants](/docs/kit-contents) page to see what parts you are allowed to use.
