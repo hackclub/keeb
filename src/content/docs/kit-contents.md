@@ -14,7 +14,7 @@ Feel like something should be included? Let me know and it might just make it in
 
 | Part | Notes |
 |------|-------|
-| [Orpheus Pico](https://orpheuspico.hackclub.com/) | Microcontroller |
+| [Orpheus Pico](https://orpheuspico.hackclub.com/) | Microcontroller (Fancy Pi Pico) |
 | [MX-Style switches](https://www.aliexpress.us/item/3256802192387196.html?gatewayAdapt=glo2usa4itemAdapt) | |
 | [EC11](https://www.alibaba.com/product-detail/EC11-rotary-15-20mm-Meihua-Bing_1600985459709.html) Rotary encoders | |
 | White blank DSA keycaps | |
