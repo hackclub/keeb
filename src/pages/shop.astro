@@ -2,61 +2,895 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Footer from '../components/Footer.astro';
 
+// Complete mock data incorporating all categories, filters, live mock paths, and rarities
 const rewards = [
   {
-    name: "Switch Sample Pack",
-    cost: 150,
+    id: "keebcard",
+    title: "KeebCard",
+    description: "A lil’ keyboard with a display for your keychain!",
+    cost: 500,
+    rarity: "EXCLUSIVE",
+    category: "EXCLUSIVE",
+    image: "https://stardance.hackclub.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsiZGF0YSI6OTcwNSwicHVyIjoiYmxvYl9pZCJ9fQ==--d5289e05012a9a7462fbd2257db1a9ae379c654f/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJ3ZWJwIiwiY3JvcF90b19jb250ZW50Ijp0cnVlLCJyZXNpemVfdG9fbGltaXQiOlszNjAsbnVsbF0sInNhdmVyIjp7InN0cmlwIjp0cnVlLCJxdWFsaXR5Ijo3NX19LCJwdXIiOiJ2YXJpYXRpb24ifX0=--3652e0445c35f878da6dea0437a6dc5f7e803587/Adobe%20Express%20-%20file.png",
+    meta: "1522 claimed"
+  },
+  {
+    id: "pcb-credits",
+    title: "PCB & Electronics Credits",
+    description: "i think pcb, therefore i am pcb. Redeem custom fabrications.",
+    cost: 75,
     rarity: "COMMON",
-    description: "Try different switch types."
+    category: "TOOLS",
+    image: "https://stardance.hackclub.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsiZGF0YSI6OTcwNSwicHVyIjoiYmxvYl9pZCJ9fQ==--d5289e05012a9a7462fbd2257db1a9ae379c654f/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJ3ZWJwIiwiY3JvcF90b19jb250ZW50Ijp0cnVlLCJyZXNpemVfdG9fbGltaXQiOlszNjAsbnVsbF0sInNhdmVyIjp7InN0cmlwIjp0cnVlLCJxdWFsaXR5Ijo3NX19LCJwdXIiOiJ2YXJpYXRpb24ifX0=--3652e0445c35f878da6dea0437a6dc5f7e803587/Adobe%20Express%20-%20file.png"
   },
   {
-    name: "Artisan Keycap",
-    cost: 800,
+    id: "github-keycaps",
+    title: "GitHub Keycaps",
+    description: "Assorted pack of 8 custom modules! Click git!",
+    cost: 350,
     rarity: "EPIC",
-    description: "A custom artisan keycap."
+    category: "KEYCAPS",
+    image: "https://stardance.hackclub.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsiZGF0YSI6OTY0MywicHVyIjoiYmxvYl9pZCJ9fQ==--3451ad6d38849957e022110b3a154892f0fdfa04/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJ3ZWJwIiwiY3JvcF90b19jb250ZW50Ijp0cnVlLCJyZXNpemVfdG9fbGltaXQiOlszNjAsbnVsbF0sInNhdmVyIjp7InN0cmlwIjp0cnVlLCJxdWFsaXR5Ijo3NX19LCJwdXIiOiJ2YXJpYXRpb24ifX0=--3652e0445c35f878da6dea0437a6dc5f7e803587/gh_keycaps%20Background%20Removed.png"
   },
   {
-    name: "Deskmat",
-    cost: 1200,
+    id: "aula-f75",
+    title: "Mechanical Keyboard ( AULA F75 )",
+    description: "Compact 75% mechanical keyboard with smooth switches, hot swap support, and reactive RGB lighting.",
+    cost: 600,
+    rarity: "LEGENDARY",
+    category: "ACCESSORIES",
+    image: "https://stardance.hackclub.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6OTc8OSwicHVyIjoiYmxvYl9pZCJ9fQ==--d83314ceb9e1bd69de04c8b680ea78753f9c64d3/Screenshot%202026-04-24%20000304.png"
+  },
+  {
+    id: "novelties-clicky",
+    title: "Jade Box Premium Switches",
+    description: "Ultra-satisfying clicky action with thick click-bar mechanics. Pack of 70.",
+    cost: 250,
     rarity: "RARE",
-    description: "Premium keyboard deskmat."
+    category: "SWITCHES",
+    image: "https://stardance.hackclub.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsiZGF0YSI6OTY0MywicHVyIjoiYmxvYl9pZCJ9fQ==--3451ad6d38849957e022110b3a154892f0fdfa04/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJ3ZWJwIiwiY3JvcF90b19jb250ZW50Ijp0cnVlLCJyZXNpemVfdG9fbGltaXQiOlszNjAsbnVsbF0sInNhdmVyIjp7InN0cmlwIjp0cnVlLCJxdWFsaXR5Ijo3NX19LCJwdXIiOiJ2YXJpYXRpb24ifX0=--3652e0445c35f878da6dea0437a6dc5f7e803587/gh_keycaps%20Background%20Removed.png"
+  },
+  {
+    id: "gateron-milky",
+    title: "Gateron Milky Yellows",
+    description: "Buttery smooth linear switches, legendary for custom budget builds. Pack of 90.",
+    cost: 280,
+    rarity: "COMMON",
+    category: "SWITCHES",
+    image: "https://stardance.hackclub.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsiZGF0YSI6OTcwNSwicHVyIjoiYmxvYl9pZCJ9fQ==--d5289e05012a9a7462fbd2257db1a9ae379c654f/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJ3ZWJwIiwiY3JvcF90b19jb250ZW50Ijp0cnVlLCJyZXNpemVfdG9fbGltaXQiOlszNjAsbnVsbF0sInNhdmVyIjp7InN0cmlwIjp0cnVlLCJxdWFsaXR5Ijo3NX19LCJwdXIiOiJ2YXJpYXRpb24ifX0=--3652e0445c35f878da6dea0437a6dc5f7e803587/Adobe%20Express%20-%20file.png"
+  },
+  {
+    id: "acrylic-switch-tester",
+    title: "Acrylic Switch Tester",
+    description: "A 12-slot clear acrylic base to mount and test your favorite switch variants.",
+    cost: 300,
+    rarity: "RARE",
+    category: "TOOLS",
+    image: "https://cdn.hackclub.com/019ed250-7146-725f-bfc4-fc5a5da63451/untitled_design.svg"
+  },
+  {
+    id: "minimalist-deskmat",
+    title: "Minimalist Deskmat",
+    description: "Extra large stitched-edge deskmat featuring subtle Hack Club geometric patterns.",
+    cost: 500,
+    rarity: "RARE",
+    category: "ACCESSORIES",
+    image: "https://cdn.hackclub.com/019ed250-7146-725f-bfc4-fc5a5da63451/untitled_design.svg"
+  },
+  {
+    id: "lubing-kit",
+    title: "Complete Lubing Kit",
+    description: "Includes Krytox 205g0, a premium brush, stem picker, and a secure metal switch opener.",
+    cost: 450,
+    rarity: "EPIC",
+    category: "TOOLS",
+    image: "https://cdn.hackclub.com/019ed250-7146-725f-bfc4-fc5a5da63451/untitled_design.svg"
+  },
+  {
+    id: "mystery-box",
+    title: "Cyberpunk Mystery Box",
+    description: "A legendary drop containing a completely randomized premium keyboard accessory drop.",
+    cost: 1200,
+    rarity: "LEGENDARY",
+    category: "EXCLUSIVE",
+    image: "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?auto=format&fit=crop&w=600&q=80"
   }
 ];
+
+const categories = ['ALL', 'KEYCAPS', 'SWITCHES', 'TOOLS', 'ACCESSORIES', 'EXCLUSIVE'];
 ---
 
-<BaseLayout title="Keeb Shop">
-  <main>
-    <section class="shop-hero">
-      <div class="shop-hero__inner">
-        <h1>KEEB SHOP</h1>
-        <p>Earn rewards by customizing and building keyboards.</p>
-      </div>
-    </section>
+<BaseLayout title="KEEB SHOP | Hack Club">
+  <header class="navbar-wrapper">
+    <div class="navbar-inner">
+      <a href="/" class="logo-link" aria-label="Hack Club Keeb Shop Home">
+        <img src="https://cdn.hackclub.com/019ed250-7146-725f-bfc4-fc5a5da63451/untitled_design.svg" alt="Keeb Shop Logo" class="site-logo" />
+      </a>
+      <div class="ipad-sticker rotation-left">WORKBENCH</div>
+    </div>
+  </header>
 
-    <section class="balance">
-      <div class="balance-card">
-        <span>🪙</span>
-        <h2>1250 Coins</h2>
-        <p>Mock balance (Airtable later)</p>
+  <main class="shop-container">
+    
+    <section class="hero">
+      <div class="hero-content">
+        <h1 class="glitch-title">KEEB SHOP</h1>
+        <p class="subtitle">Build. Customize. Earn.</p>
+        <p class="description">Unlock rewards by logging hours and improving your keyboard build variants.</p>
+        <a href="#rewards-explorer" class="btn btn-primary">Browse Rewards</a>
+        
+        <div class="stickers-pile">
+          <div class="ipad-sticker rotation-right color-pink">CLICKY</div>
+          <div class="ipad-sticker rotation-left color-yellow">LINEAR</div>
+        </div>
       </div>
-    </section>
 
-    <section class="rewards">
-      <div class="reward-grid">
-        {
-          rewards.map((reward) => (
-            <div class="reward-card">
-              <span class="rarity">{reward.rarity}</span>
-              <h3>{reward.name}</h3>
-              <p>{reward.description}</p>
-              <strong>{reward.cost} Coins</strong>
-              <button>Redeem</button>
+      <div class="user-panel">
+        <div class="profile-card">
+          <div class="profile-header">
+            <div class="avatar">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 16V8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2z"></path><path d="M12 6v12"></path><path d="M4 12h16"></path></svg>
             </div>
-          ))
-        }
+            <div>
+              <h3>Builder Profile</h3>
+              <span class="badge-red">Switch Wizard</span>
+            </div>
+          </div>
+          <div class="stats-grid">
+            <div class="stat-item">
+              <span class="stat-val text-accent" id="coin-counter" data-target="1250">0</span>
+              <span class="stat-lbl">Coins Available</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-val">42h</span>
+              <span class="stat-lbl">Hours Logged</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-val">3</span>
+              <span class="stat-lbl">Claimed</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="status-card">
+          <div class="status-header">
+            <span class="status-dot animate-pulse"></span>
+            <h4>Account Status</h4>
+          </div>
+          <p class="status-text">Unlock full sync to secure your workbench hours and claim drops instantly.</p>
+          <button class="btn btn-auth" disabled>
+            <span>Connect Hack Club Account</span>
+            <span class="lock-badge">Coming Soon</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <div class="shop-branding-divider">
+      <img src="https://cdn.hackclub.com/019ed250-7146-725f-bfc4-fc5a5da63451/untitled_design.svg" alt="Branding Badge Logo" class="floating-mid-logo" />
+      <div class="ipad-sticker rotation-right color-pink floating-badge">100% HARDWARE</div>
+    </div>
+
+    <section id="rewards-explorer" class="rewards-explorer">
+      <div class="explorer-header">
+        <h2 class="section-title">Available Rewards</h2>
+        
+        <div class="category-pills">
+          {categories.map((cat, idx) => (
+            <button class={`pill ${idx === 0 ? 'active' : ''} ipad-sticker`} data-category={cat}>
+              {cat}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div class="grid" id="rewards-grid">
+        {rewards.map((reward) => (
+          <div class="reward-card" data-cat={reward.category}>
+            <div class="reward-image-container">
+              <div class="image-box-hacker">
+                <img src={reward.image} alt={reward.title} class="reward-thumb" loading="lazy" />
+              </div>
+              <span class={`rarity-tag ${reward.rarity.toLowerCase()} ipad-sticker`}>{reward.rarity}</span>
+            </div>
+            <div class="reward-card-content">
+              <div class="reward-meta-row">
+                <span class="reward-cat">{reward.category}</span>
+                {reward.meta && <span class="reward-count-badge">{reward.meta}</span>}
+              </div>
+              <h3>{reward.title}</h3>
+              <p>{reward.description}</p>
+              <div class="reward-card-footer">
+                <span class="coin-cost">{reward.cost} Coins</span>
+                <button 
+                  class="btn btn-secondary card-btn redeem-trigger" 
+                  data-id={reward.id}
+                  data-title={reward.title}
+                  data-cost={reward.cost}
+                  data-desc={reward.description}
+                >
+                  Redeem
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="progress-section">
+      <div class="progress-container-card">
+        <div class="tier-milestones">
+          <span class="tier-node completed">Modder</span>
+          <span class="tier-node active">Switch Wizard</span>
+          <span class="tier-node locked">Artisan Crafter</span>
+        </div>
+        <div class="progress-stats">
+          <span>1250 / 1500 Coins</span>
+          <span class="text-accent">250 Coins Until Artisan Crafter Rank</span>
+        </div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" style="width: 83.33%"></div>
+        </div>
       </div>
     </section>
   </main>
 
+  <div class="modal-overlay" id="redemption-modal" aria-hidden="true">
+    <div class="modal-window">
+      <button class="modal-close" id="modal-close-btn" aria-label="Close modal">×</button>
+      
+      <div id="modal-standard-view">
+        <h2 id="modal-reward-title" class="modal-title">Reward Title</h2>
+        <div class="modal-cost-container">
+          <span class="modal-cost-lbl">Cost:</span>
+          <span id="modal-reward-cost" class="modal-cost-val">0 Coins</span>
+        </div>
+        <p id="modal-reward-desc" class="modal-description">Detailed specification asset description goes here.</p>
+        
+        <div class="redemption-notice-box">
+          <p class="notice-text">Redemption system coming soon.</p>
+          <button class="btn btn-primary modal-action-btn" id="request-redemption-btn">Request Redemption</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <Footer />
 </BaseLayout>
+
+<style>
+  :root {
+    --red-primary: #e11d48;
+    --red-dark: #9f1239;
+    --red-glow: #f43f5e;
+    --bg-dark: #000000;
+    --card-bg: #0a0a0a;
+    --border-color: #262626;
+    --text-main: #f5f5f5;
+    --text-muted: #a3a3a3;
+    --common: #a3a3a3;
+    --rare: #3b82f6;
+    --epic: #f43f5e;
+    --legendary: #fbbf24;
+    --exclusive: #a855f7;
+    
+    /* Sticker style variables */
+    --sticker-border: #ffffff;
+    --sticker-shadow: #000000;
+  }
+
+  /* NAVBAR BRANDING STYLES */
+  .navbar-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 2rem 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-dark);
+  }
+
+  .navbar-inner {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .logo-link {
+    display: inline-block;
+    transition: transform 0.2s ease;
+  }
+
+  .logo-link:hover {
+    transform: scale(1.05);
+  }
+
+  .site-logo {
+    height: 48px;
+    width: auto;
+    display: block;
+  }
+
+  /* MID LOGO ROW STYLING */
+  .shop-branding-divider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0 -2rem 0;
+    position: relative;
+    gap: 1rem;
+  }
+
+  .floating-mid-logo {
+    height: 64px;
+    width: auto;
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.1));
+    animation: floatingLogo 4s ease-in-out infinite;
+  }
+
+  .floating-badge {
+    font-size: 0.7rem !important;
+    padding: 0.25rem 0.75rem !important;
+  }
+
+  @keyframes floatingLogo {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+  }
+
+  /* STICKER STYLING */
+  .ipad-sticker {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #000000;
+    font-family: "Comic Sans MS", "Chalkboard SE", sans-serif;
+    font-weight: 900;
+    font-size: 0.85rem;
+    padding: 0.4rem 1rem;
+    border: 3px solid var(--sticker-border);
+    box-shadow: 4px 4px 0px var(--sticker-shadow);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    user-select: none;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .ipad-sticker:hover {
+    transform: scale(1.03) rotate(1deg);
+    box-shadow: 6px 6px 0px var(--sticker-shadow);
+  }
+
+  .stickers-pile {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .rotation-left { transform: rotate(-4deg); }
+  .rotation-right { transform: rotate(5deg); }
+  .color-pink { background-color: #ff6097; color: #ffffff; }
+  .color-yellow { background-color: #fadc12; color: #000000; }
+
+  /* CONTAINER LAYOUT */
+  .shop-container {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: system-ui, -apple-system, sans-serif;
+    padding: 2rem 2rem 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+  }
+
+  .section-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+    margin-bottom: 2rem;
+    position: relative;
+  }
+  
+  .section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--red-primary);
+    margin-top: 0.5rem;
+  }
+
+  .text-accent { color: var(--red-glow); }
+
+  /* BUTTONS */
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-weight: 700;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    font-size: 0.875rem;
+    text-align: center;
+    border: none;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--red-primary), var(--red-dark));
+    color: #fff;
+    border: 1px solid var(--red-glow);
+    box-shadow: 0 4px 14px rgba(225, 29, 72, 0.2);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(244, 63, 94, 0.4);
+    border-color: #fff;
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: #fff;
+    border: 1px solid var(--border-color);
+  }
+
+  .btn-secondary:hover {
+    background: #171717;
+    border-color: var(--red-primary);
+    transform: translateY(-1px);
+  }
+
+  /* HERO */
+  .hero {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 3rem;
+    align-items: start;
+    padding-top: 2rem;
+  }
+
+  .glitch-title {
+    font-size: 4.5rem;
+    font-weight: 900;
+    line-height: 0.95;
+    margin: 0 0 0.5rem 0;
+    letter-spacing: -0.03em;
+    background: linear-gradient(to right, #fff, var(--text-muted));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--red-glow);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin: 0 0 1rem 0;
+  }
+
+  .description {
+    color: var(--text-muted);
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+    max-width: 480px;
+    line-height: 1.5;
+  }
+
+  .user-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .profile-card {
+    background: linear-gradient(145deg, var(--card-bg), #0e0e0e);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .profile-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--red-primary), var(--red-glow));
+  }
+
+  .profile-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .avatar {
+    width: 48px;
+    height: 48px;
+    background: var(--red-dark);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--red-glow);
+    border: 1px solid var(--red-glow);
+  }
+
+  .avatar svg { width: 24px; height: 24px; }
+  .profile-header h3 { margin: 0 0 0.25rem 0; font-size: 1.25rem; }
+
+  .badge-red {
+    background: rgba(244, 63, 94, 0.1);
+    color: var(--red-glow);
+    border: 1px solid rgba(244, 63, 94, 0.2);
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .stat-item {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 1rem 0.5rem;
+    border-radius: 6px;
+  }
+
+  .stat-val { display: block; font-size: 1.5rem; font-weight: 800; margin-bottom: 0.25rem; }
+  .stat-lbl { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+
+  .status-card {
+    background: #050505;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+
+  .status-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
+  .status-dot { width: 8px; height: 8px; background-color: #e11d48; border-radius: 50%; box-shadow: 0 0 8px #f43f5e; }
+  .animate-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: .4; transform: scale(1.15); }
+  }
+
+  .status-header h4 { margin: 0; font-size: 0.95rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+  .status-text { font-size: 0.85rem; color: var(--text-muted); margin: 0 0 1.25rem 0; line-height: 1.4; }
+
+  .btn-auth {
+    width: 100%;
+    background: #121212;
+    border: 1px dashed #333;
+    color: #525252;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    cursor: not-allowed;
+  }
+
+  .lock-badge {
+    background: #262626;
+    color: #a3a3a3;
+    font-size: 0.65rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+
+  /* REWARDS EXPLORER & FILTERS */
+  .rewards-explorer {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .explorer-header {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .category-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .category-pills .pill {
+    cursor: pointer;
+    background: #ffffff;
+    color: #000000;
+  }
+
+  .category-pills .pill.active {
+    background: var(--red-primary);
+    color: #ffffff;
+    border-color: #ffffff;
+  }
+
+  /* PRODUCT CARD & IMAGE FIX SYSTEM */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .reward-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+
+  .reward-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-color);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+  }
+
+  /* Core image correction rule */
+  .reward-image-container {
+    position: relative;
+    background: #0e0e0e;
+    width: 100%;
+    aspect-ratio: 1 / 1; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.5rem;
+    box-sizing: border-box;
+  }
+
+  .image-box-hacker {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .reward-thumb {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain; /* Prevents stretching and cropping */
+    display: block;
+    image-rendering: -webkit-optimize-contrast; /* Sharp pixels */
+  }
+
+  .rarity-tag {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    font-size: 0.65rem !important;
+    padding: 0.2rem 0.6rem !important;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .rarity-tag.common { background-color: #e5e5e5; color: #000000; }
+  .rarity-tag.rare { background-color: #3b82f6; color: #ffffff; }
+  .rarity-tag.epic { background-color: #f43f5e; color: #ffffff; }
+  .rarity-tag.legendary { background-color: #fbbf24; color: #000000; }
+  .rarity-tag.exclusive { background-color: #a855f7; color: #ffffff; }
+
+  .reward-card-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .reward-meta-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+  }
+
+  .reward-cat {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .reward-count-badge {
+    background: #171717;
+    color: var(--text-muted);
+    font-size: 0.7rem;
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+  }
+
+  .reward-card-content h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .reward-card-content p {
+    margin: 0 0 1.5rem 0;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    flex-grow: 1;
+  }
+
+  .reward-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.03);
+  }
+
+  .coin-cost {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #fff;
+  }
+
+  .card-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  /* PROGRESS BAR TIER PROFILE BLOCK */
+  .progress-section {
+    width: 100%;
+  }
+
+  .progress-container-card {
+    background: #050505;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+  }
+
+  .tier-milestones {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+
+  .tier-node {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+  }
+
+  .tier-node.completed { color: var(--text-muted); text-decoration: line-through; }
+  .tier-node.active { color: var(--red-glow); background: rgba(244, 63, 94, 0.05); }
+  .tier-node.locked { color: #404040; }
+
+  .progress-stats {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+
+  .progress-bar-bg {
+    width: 100%;
+    height: 8px;
+    background: #171717;
+    border-radius: 99px;
+    overflow: hidden;
+  }
+
+  .progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--red-primary), var(--red-glow));
+    border-radius: 99px;
+  }
+
+  /* INTERACTIVE REDEMPTION MODAL DIALOG OVERLAYS */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .modal-window {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 460px;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.5rem;
+    cursor: pointer;
+    line-height: 1;
+  }
+
+  .modal-close:hover { color: #fff; }
+  .modal-title { font-size: 1.75rem; font-weight: 800; margin: 0 0 1rem 0; }
+  .modal-cost-container { margin-bottom: 1.5rem; }
+  .modal-cost-lbl { color: var(--text-muted); font-size: 0.9rem; margin-right: 0.5rem; }
+  .modal-cost-val { font-size: 1.25rem; font-weight: 800; color: var(--red-glow); }
+  .modal-description { color: var(--text-muted); line-height: 1.6; margin-bottom: 2rem; font-size: 0.95rem; }
+
+  .redemption-notice-box {
+    background: #050505;
+    border: 1px dashed var(--border-color);
+    padding: 1.25rem;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .notice-text {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 0 0 1rem 0;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .modal-action-btn { width: 100%; }
+</style>
+
+
+
+
