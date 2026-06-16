@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Footer from '../components/Footer.astro';
+
+const rewards = [
+  {
+    name: "Switch Sample Pack",
+    cost: 150,
+    rarity: "COMMON",
+    description: "Try different switch types."
+  },
+  {
+    name: "Artisan Keycap",
+    cost: 800,
+    rarity: "EPIC",
+    description: "A custom artisan keycap."
+  },
+  {
+    name: "Deskmat",
+    cost: 1200,
+    rarity: "RARE",
+    description: "Premium keyboard deskmat."
+  }
+];
+---
+
+<BaseLayout title="Keeb Shop">
+  <main>
+    <section class="shop-hero">
+      <div class="shop-hero__inner">
+        <h1>KEEB SHOP</h1>
+        <p>Earn rewards by customizing and building keyboards.</p>
+      </div>
+    </section>
+
+    <section class="balance">
+      <div class="balance-card">
+        <span>🪙</span>
+        <h2>1250 Coins</h2>
+        <p>Mock balance (Airtable later)</p>
+      </div>
+    </section>
+
+    <section class="rewards">
+      <div class="reward-grid">
+        {
+          rewards.map((reward) => (
+            <div class="reward-card">
+              <span class="rarity">{reward.rarity}</span>
+              <h3>{reward.name}</h3>
+              <p>{reward.description}</p>
+              <strong>{reward.cost} Coins</strong>
+              <button>Redeem</button>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
