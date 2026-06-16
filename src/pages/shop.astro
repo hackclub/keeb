@@ -158,6 +158,24 @@ const rarityColorJson = JSON.stringify(RARITY_COLOR);
 
 <body>
 
+<div id="admin-gate" class="admin-gate">
+  <div class="gate-box">
+    <h1>KEEB SHOP ACCESS</h1>
+    <p>Enter access code</p>
+
+    <input
+      id="access-code"
+      type="password"
+      placeholder="Launching soon for everyone"
+      autocomplete="off"
+    />
+
+    <button id="unlock-btn">Unlock</button>
+
+    <p id="gate-error"></p>
+  </div>
+</div>
+
 <!-- ═══════════════════════════════════════════ NAVBAR ═══ -->
 <nav class="navbar">
   <div class="nav-inner">
@@ -924,6 +942,50 @@ const rarityColorJson = JSON.stringify(RARITY_COLOR);
     .section-title { font-size: 1.8rem; }
     .keeb-title { font-size: 3.2rem; }
   }
+
+
+  .admin-gate{
+  position:fixed;
+  inset:0;
+  background:#050505;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:99999;
+}
+
+.gate-box{
+  width:400px;
+  max-width:90%;
+  border:2px solid #222;
+  padding:2rem;
+  background:#0d0d0d;
+  text-align:center;
+}
+
+.gate-box input{
+  width:100%;
+  padding:.8rem;
+  margin:1rem 0;
+  background:#000;
+  color:white;
+  border:1px solid #333;
+}
+
+.gate-box button{
+  width:100%;
+  padding:.8rem;
+  background:#e11d48;
+  border:none;
+  color:white;
+  cursor:pointer;
+}
+
+#gate-error{
+  color:#ef4444;
+  margin-top:.75rem;
+  font-size:.8rem;
+}
 </style>
 
 <script define:vars={{ rewardsJson, rarityColorJson }}>
@@ -1025,4 +1087,32 @@ const rarityColorJson = JSON.stringify(RARITY_COLOR);
   document.getElementById("modal-cancel")?.addEventListener("click", closeModal);
   modal?.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
+
+  const ADMIN_CODE = "HCK-SHOP-ADMIN-2026";
+
+const gate = document.getElementById("admin-gate");
+const input = document.getElementById("access-code");
+const button = document.getElementById("unlock-btn");
+const error = document.getElementById("gate-error");
+
+if (localStorage.getItem("keeb-admin") === ADMIN_CODE) {
+  gate?.remove();
+}
+
+function unlock() {
+  const code = input?.value?.trim();
+
+  if (code === ADMIN_CODE) {
+    localStorage.setItem("keeb-admin", code);
+    gate?.remove();
+  } else {
+    error.textContent = "Invalid access code";
+  }
+}
+
+button?.addEventListener("click", unlock);
+
+input?.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") unlock();
+});
 </script>
