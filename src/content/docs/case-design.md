@@ -85,6 +85,10 @@ This creates a new Part Studio that is linked to the Assembly. You can now see y
 
 The case needs to do three things: hold the PCB securely, leave the switches accessible from the top, and expose the USB port on the side.
 
+There are several mount styles to choose from, and each one changes how the keyboard feels and sounds when typing:
+
+![Keyboard mount styles diagram](https://cdn.hackclub.com/019d5a3e-353c-7eb9-ad7a-745c287e6495/image.png)
+
 ### Step 1: Sketch the Bottom Profile
 
 1. Click **Sketch** in the top toolbar.
