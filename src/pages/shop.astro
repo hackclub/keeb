@@ -158,21 +158,14 @@ const rarityColorJson = JSON.stringify(RARITY_COLOR);
 
 <body>
 
-<div id="admin-gate" class="admin-gate">
-  <div class="gate-box">
-    <h1>KEEB SHOP ACCESS</h1>
-    <p>Enter access code</p>
-
-    <input
-      id="access-code"
-      type="password"
-      placeholder="Launching soon for everyone"
-      autocomplete="off"
-    />
-
-    <button id="unlock-btn">Unlock</button>
-
-    <p id="gate-error"></p>
+<div id="admin-gate" class="coming-soon">
+  <div class="cs-inner">
+    <span class="cs-tag">KEEB SHOP</span>
+    <h1 class="cs-title">COMING<br/>SOON</h1>
+    <p class="cs-sub">
+      The underground Hack Club rewards terminal is being stocked.<br/>
+      Log the hours now, claim the hardware soon.
+    </p>
   </div>
 </div>
 
@@ -191,7 +184,7 @@ const rarityColorJson = JSON.stringify(RARITY_COLOR);
   </div>
 </nav>
 
-<!-- sketchy keyboard illustration — top right decorative -->
+<!-- sketchy keyboard illustration, top right decorative -->
 <div class="sketch sketch-keyboard" aria-hidden="true">
   <svg width="220" height="110" viewBox="0 0 220 110" fill="none" xmlns="http://www.w3.org/2000/svg">
     <!-- keyboard body -->
@@ -399,9 +392,6 @@ const rarityColorJson = JSON.stringify(RARITY_COLOR);
   </div>
   <span class="sticker sticker-sm rotate-neg" style="margin-bottom:1rem">HACK CLUB</span>
   <p class="footer-text">Built by Hack Club. Keep hacking.</p>
-  <p class="footer-text" style="opacity:0.3;font-size:0.7rem">
-    {AIRTABLE_API_KEY ? "Live data from Airtable" : "Running on static fallback data"}
-  </p>
 </footer>
 
 <!-- ═══════════════ REDEMPTION MODAL ════════════════════════ -->
@@ -944,48 +934,51 @@ const rarityColorJson = JSON.stringify(RARITY_COLOR);
   }
 
 
-  .admin-gate{
-  position:fixed;
-  inset:0;
-  background:#050505;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:99999;
-}
+  /* ── COMING SOON BANNER (covers the entire shop) ─────── */
+  .coming-soon{
+    position:fixed;
+    inset:0;
+    z-index:99999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:1.5rem;
+    background:radial-gradient(circle at 50% 28%, #15151c 0%, #050505 68%);
+  }
 
-.gate-box{
-  width:400px;
-  max-width:90%;
-  border:2px solid #222;
-  padding:2rem;
-  background:#0d0d0d;
-  text-align:center;
-}
+  .cs-inner{ max-width:640px; }
 
-.gate-box input{
-  width:100%;
-  padding:.8rem;
-  margin:1rem 0;
-  background:#000;
-  color:white;
-  border:1px solid #333;
-}
+  .cs-tag{
+    display:inline-block;
+    font-size:0.75rem;
+    font-weight:700;
+    letter-spacing:0.35em;
+    text-transform:uppercase;
+    color:#e11d48;
+    border:2px solid #e11d48;
+    box-shadow:3px 3px 0 #9f1239;
+    padding:0.4rem 0.95rem;
+    margin-bottom:1.75rem;
+  }
 
-.gate-box button{
-  width:100%;
-  padding:.8rem;
-  background:#e11d48;
-  border:none;
-  color:white;
-  cursor:pointer;
-}
+  .cs-title{
+    font-size:clamp(4rem, 17vw, 11rem);
+    font-weight:900;
+    line-height:0.82;
+    letter-spacing:-0.03em;
+    text-transform:uppercase;
+    color:#ffffff;
+    text-shadow:3px 0 #e11d48, -3px 0 #06b6d4;
+    margin-bottom:1.5rem;
+  }
 
-#gate-error{
-  color:#ef4444;
-  margin-top:.75rem;
-  font-size:.8rem;
-}
+  .cs-sub{
+    color:#a3a3a3;
+    font-size:0.95rem;
+    line-height:1.7;
+    margin-bottom:2.5rem;
+  }
 </style>
 
 <script define:vars={{ rewardsJson, rarityColorJson }}>
@@ -1006,7 +999,7 @@ const rarityColorJson = JSON.stringify(RARITY_COLOR);
       charIdx++;
       setTimeout(typeNext, charIdx === 1 ? 350 : 80 + Math.random() * 60);
     } else {
-      // typing done — pause then enable glitch
+      // typing done, pause then enable glitch
       setTimeout(() => {
         if (cursorEl) cursorEl.classList.add("hidden");
         if (headingEl) headingEl.classList.add("glitch-on");
@@ -1087,32 +1080,4 @@ const rarityColorJson = JSON.stringify(RARITY_COLOR);
   document.getElementById("modal-cancel")?.addEventListener("click", closeModal);
   modal?.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
-
-  const ADMIN_CODE = "HCK-SHOP-ADMIN-2026";
-
-const gate = document.getElementById("admin-gate");
-const input = document.getElementById("access-code");
-const button = document.getElementById("unlock-btn");
-const error = document.getElementById("gate-error");
-
-if (localStorage.getItem("keeb-admin") === ADMIN_CODE) {
-  gate?.remove();
-}
-
-function unlock() {
-  const code = input?.value?.trim();
-
-  if (code === ADMIN_CODE) {
-    localStorage.setItem("keeb-admin", code);
-    gate?.remove();
-  } else {
-    error.textContent = "Invalid access code";
-  }
-}
-
-button?.addEventListener("click", unlock);
-
-input?.addEventListener("keydown", (e) => {
-  if (e.key === "Enter") unlock();
-});
 </script>

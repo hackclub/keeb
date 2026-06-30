@@ -20,7 +20,7 @@ import KeyboardVisual from './KeyboardVisual.astro';
   </div>
 
   <div class="hero__content">
-    <h1 class="hero__title">
+    <h1 class="hero__title" id="hero-title">
       BUILD YOUR<br />OWN <span class="hero__accent">KEYBOARD</span>
     </h1>
     <p class="hero__sub">
@@ -39,6 +39,100 @@ import KeyboardVisual from './KeyboardVisual.astro';
     <img src="/Photos/Group 1.png" alt="Keyboard builds" />
   </div>
 </section>
+
+<script>
+  // Typed-in + glitch effect on the hero heading — mirrors the KEEB SHOP title.
+  // The real text lives in the markup as a fallback (no-JS / SEO); we clear and retype it here.
+  const titleEl = document.getElementById('hero-title');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (titleEl && !reduce) {
+    // "OWN " is followed by the accented "KEYBOARD", and there's a line break after "BUILD YOUR".
+    const SEGMENTS = [
+      { text: 'BUILD YOUR' },
+      { br: true },
+      { text: 'OWN ' },
+      { text: 'KEYBOARD', accent: true },
+    ];
+
+    const steps: { ch?: string; accent?: boolean; br?: boolean }[] = [];
+    for (const seg of SEGMENTS) {
+      if (seg.br) { steps.push({ br: true }); continue; }
+      for (const ch of seg.text!) steps.push({ ch, accent: seg.accent });
+    }
+
+    titleEl.textContent = '';
+
+    // Astro scopes component styles with a data-astro-cid-* attribute. Elements we
+    // build in JS don't inherit it, so the scoped .hero__accent / .type-cursor rules
+    // (red colour, underline, blink) won't apply unless we copy the attribute over.
+    const scopeAttr = titleEl.getAttributeNames().find((n) => n.startsWith('data-astro-cid-'));
+    const scope = <T extends HTMLElement>(el: T): T => {
+      if (scopeAttr) el.setAttribute(scopeAttr, '');
+      return el;
+    };
+
+    const typed = scope(document.createElement('span'));
+    const cursor = scope(document.createElement('span'));
+    cursor.className = 'type-cursor';
+    cursor.textContent = '|';
+    titleEl.append(typed, cursor);
+
+    let accentSpan: HTMLSpanElement | null = null;
+    let i = 0;
+
+    function typeNext() {
+      if (i >= steps.length) {
+        // done typing — keep the caret (blinks when idle), start occasional glitch bursts
+        setTimeout(() => {
+          startIdleCaret();
+          scheduleGlitch();
+        }, 900);
+        return;
+      }
+      const step = steps[i++];
+      if (step.br) {
+        typed.appendChild(document.createElement('br'));
+        accentSpan = null;
+        setTimeout(typeNext, 90);
+        return;
+      }
+      if (step.accent) {
+        if (!accentSpan) {
+          accentSpan = scope(document.createElement('span'));
+          accentSpan.className = 'hero__accent';
+          typed.appendChild(accentSpan);
+        }
+        accentSpan.textContent += step.ch;
+      } else {
+        typed.appendChild(document.createTextNode(step.ch!));
+      }
+      setTimeout(typeNext, i === 1 ? 350 : 80 + Math.random() * 60);
+    }
+
+    // ── occasional, randomized glitch burst (at least 10s apart) ──
+    function scheduleGlitch() {
+      const delay = 10000 + Math.random() * 15000; // 10s–25s
+      setTimeout(() => {
+        titleEl!.classList.add('glitch-burst');
+        setTimeout(() => titleEl!.classList.remove('glitch-burst'), 400);
+        scheduleGlitch();
+      }, delay);
+    }
+
+    // ── caret blinks when idle, holds steady while the user types ──
+    function startIdleCaret() {
+      let idleTimer: number | undefined;
+      document.addEventListener('keydown', () => {
+        cursor.classList.add('solid');
+        clearTimeout(idleTimer);
+        idleTimer = window.setTimeout(() => cursor.classList.remove('solid'), 1000);
+      });
+    }
+
+    setTimeout(typeNext, 600);
+  }
+</script>
 
 <style>
   @keyframes enter {
@@ -75,10 +169,50 @@ import KeyboardVisual from './KeyboardVisual.astro';
     margin-bottom: 1.5rem;
     letter-spacing: 0.02em;
     animation: enter 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+    /* reserve two lines so the typing animation doesn't push the page down */
+    min-height: 1.9em;
+    /* gentle persistent chromatic depth ("3D") — visible but not overpowering */
+    text-shadow: 1.5px 0 #e11d48, -1.5px 0 #06b6d4;
+  }
+
+  /* ── TYPED-IN CURSOR (matches the shop) ──────────────── */
+  .type-cursor {
+    display: inline-block;
+    color: #e11d48;
+    font-weight: 300;
+    animation: blink 0.75s step-end infinite;
+  }
+
+  .type-cursor.hidden {
+    display: none;
+  }
+
+  /* caret holds steady while the user is actively typing, blinks when idle */
+  .type-cursor.solid {
+    animation: none;
+    opacity: 1;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  /* ── GLITCH BURST — fired occasionally from JS (random, >=20s apart) ─ */
+  .hero__title.glitch-burst {
+    animation: glitch-burst 0.4s steps(2, end);
+  }
+
+  /* subtle one-shot: clean before/after, only a faint chromatic offset mid-burst */
+  @keyframes glitch-burst {
+    0%, 100% { text-shadow: 1.5px 0 #e11d48, -1.5px 0 #06b6d4; clip-path: none; transform: translate(0); }
+    25% { text-shadow: 3px 0 #e11d48, -3px 0 #06b6d4; clip-path: inset(15% 0 55% 0); transform: translate(-1px, 0); }
+    50% { text-shadow: -3px 0 #06b6d4, 3px 0 #e11d48; clip-path: inset(55% 0 15% 0); transform: translate(1px, 0); }
+    75% { text-shadow: 3px 0 #e11d48, 0 0 transparent; clip-path: inset(35% 0 35% 0); transform: translate(-1px, 0); }
   }
 
   .hero__accent {
-    color: var(--purple-royal);
+    color: #e11d48;
     position: relative;
   }
 
@@ -89,7 +223,7 @@ import KeyboardVisual from './KeyboardVisual.astro';
     bottom: 0.05em;
     width: 100%;
     height: 4px;
-    background: var(--purple-deep);
+    background: #9f1239;
   }
 
   .hero__sub {

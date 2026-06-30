@@ -5,5 +5,6 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://keeb.hackclub.com',
-  integrations: [sitemap()],
+  // Keep the not-yet-launched shop out of the public sitemap.
+  integrations: [sitemap({ filter: (page) => !page.includes('/shop') })],
 });

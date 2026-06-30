@@ -12,4 +12,4 @@ Make it a weird shape, or add a cool feature, or silkscreen! The point is that y
 
 ## Next Steps
 
-Once you have a plan, head to [Designing the PCB](/docs/pcb-design) — this is the big one.
+Once you have a plan, head to [Designing the PCB](/docs/pcb-design). This is the big one.
