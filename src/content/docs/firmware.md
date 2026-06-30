@@ -10,9 +10,9 @@ We recommend that you use **RMK**, since it's modern and easy to use. [Here](htt
 
 ## The Basics
 
-1. **Set up your environment** — install RMK's cli and rust, or use GitHub actions to automatically build your firmware
-2. **Build your first firmware** — configure your keymap and matrix and compile
-3. **Flash firmware** — upload the compiled firmware to your Pico
+1. **Set up your environment**: install RMK's cli and rust, or use GitHub actions to automatically build your firmware
+2. **Build your first firmware**: configure your keymap and matrix and compile
+3. **Flash firmware**: upload the compiled firmware to your Pico
 
 ## Next Steps
 

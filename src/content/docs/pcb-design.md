@@ -333,13 +333,41 @@ Before exporting, run a DRC to catch any mistakes:
 
 ### Exporting Gerber Files
 
-Gerber files are what you send to a PCB manufacturer.
+Now that the PCB is finished, it's time to get it fabricated. Gerber files are the production files you send to a PCB manufacturer. Save your PCB, then go to **File → Fabrication Outputs → Gerbers (.gbr)** and export everything in that dialog.
 
-1. Go to **File → Fabrication Outputs → Gerbers (.gbr)**.
-2. Check all layers: `F.Cu`, `B.Cu`, `F.Silkscreen`, `B.Silkscreen`, `F.Mask`, `B.Mask`, `Edge.Cuts`.
-3. Click **Plot**.
-4. Then click **Generate Drill Files** and click **Generate Drill File**.
-5. Zip the entire output folder. That zip is what you submit to the manufacturer.
+If you want a known-good starting point, here are the exact settings to use.
+
+**Include these layers:**
+
+`F.Cu`, `B.Cu`, `F.Paste`, `B.Paste`, `F.Silkscreen`, `B.Silkscreen`, `F.Mask`, `B.Mask`, `Edge.Cuts`
+
+**General options:**
+
+| Option | Setting |
+|---|---|
+| Plot drawing sheet | off |
+| Subtract soldermask from silkscreen | off |
+| Indicate DNP on fabrication layers | on, set to **Cross-out** |
+| Sketch pads on fabrication layers | off |
+| Check zone fills before plotting | on |
+| Drill marks | None |
+| Scaling | 1:1 |
+| Plot mode | Filled |
+
+**Gerber options:**
+
+| Option | Setting |
+|---|---|
+| Use Protel filename extensions | off |
+| Generate Gerber job file | on |
+| Use extended X2 format (recommended) | on |
+| Include netlist attributes | on |
+| Disable aperture macros | off |
+| Coordinate format | 4.6, unit mm |
+
+Once your settings match, click **Plot** to generate the Gerbers. Then click **Generate Drill Files** and click **Generate Drill File** to export the `.drl` file.
+
+Finally, zip the entire output folder. That zip is what you send to the manufacturer, and you should commit it to your repo alongside your `bom.csv` and KiCad project files.
 
 ---
 
