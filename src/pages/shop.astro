@@ -158,17 +158,6 @@ const rarityColorJson = JSON.stringify(RARITY_COLOR);
 
 <body>
 
-<div id="admin-gate" class="coming-soon">
-  <div class="cs-inner">
-    <span class="cs-tag">KEEB SHOP</span>
-    <h1 class="cs-title">COMING<br/>SOON</h1>
-    <p class="cs-sub">
-      The underground Hack Club rewards terminal is being stocked.<br/>
-      Log the hours now, claim the hardware soon.
-    </p>
-  </div>
-</div>
-
 <!-- ═══════════════════════════════════════════ NAVBAR ═══ -->
 <nav class="navbar">
   <div class="nav-inner">
@@ -934,51 +923,6 @@ const rarityColorJson = JSON.stringify(RARITY_COLOR);
   }
 
 
-  /* ── COMING SOON BANNER (covers the entire shop) ─────── */
-  .coming-soon{
-    position:fixed;
-    inset:0;
-    z-index:99999;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:1.5rem;
-    background:radial-gradient(circle at 50% 28%, #15151c 0%, #050505 68%);
-  }
-
-  .cs-inner{ max-width:640px; }
-
-  .cs-tag{
-    display:inline-block;
-    font-size:0.75rem;
-    font-weight:700;
-    letter-spacing:0.35em;
-    text-transform:uppercase;
-    color:#e11d48;
-    border:2px solid #e11d48;
-    box-shadow:3px 3px 0 #9f1239;
-    padding:0.4rem 0.95rem;
-    margin-bottom:1.75rem;
-  }
-
-  .cs-title{
-    font-size:clamp(4rem, 17vw, 11rem);
-    font-weight:900;
-    line-height:0.82;
-    letter-spacing:-0.03em;
-    text-transform:uppercase;
-    color:#ffffff;
-    text-shadow:3px 0 #e11d48, -3px 0 #06b6d4;
-    margin-bottom:1.5rem;
-  }
-
-  .cs-sub{
-    color:#a3a3a3;
-    font-size:0.95rem;
-    line-height:1.7;
-    margin-bottom:2.5rem;
-  }
 </style>
 
 <script define:vars={{ rewardsJson, rarityColorJson }}>
