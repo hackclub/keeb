@@ -17,9 +17,6 @@ pnpm-debug.log*
 .env
 .env.production
 
-# nginx basic-auth credentials — never commit
-.htpasswd
-
 # macOS-specific files
 .DS_Store
 
