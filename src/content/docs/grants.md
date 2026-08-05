@@ -4,7 +4,7 @@ description: How to get all your parts
 order: 3
 ---
 
-Instead of a kit, you will create a BOM and we will give you a grant. You will buy your parts with this grant then assemble your keyboard. Save your finished BOM as a `bom.csv` file and commit it to your GitHub repo.
+Instead of a kit, you will create a BOM and we will give you a grant. Grant funds are sent through [Hack Club Bank](https://hcb.hackclub.com/users/auth?require_reload=true) (HCB) — sign in there to access your funds. You will buy your parts with this grant then assemble your keyboard. Save your finished BOM as a `bom.csv` file and commit it to your GitHub repo.
 
 Below is some easy parts for you to access, but you are allowed to source other parts yourself! Try to keep this as cheap as possible.
 th

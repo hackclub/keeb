@@ -4,7 +4,7 @@ import Hero from '../components/Hero.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<BaseLayout title="KEEB: Build Your Own Mechanical Keyboard | Hack Club Kit">
+<BaseLayout title="KEEB: Build Your Own Mechanical Keyboard | Hack Club">
   <main>
     <Hero />
 
@@ -17,7 +17,7 @@ import Footer from '../components/Footer.astro';
           <li class="step">
             <span class="step__number">01</span>
             <div class="step__content">
-              <h3 class="step__title">FOLLOW THE GUIDE</h3>
+              <h3 class="step__title">FOLLOW THE <a href="/docs" class="step__link">GUIDE</a></h3>
               <p class="step__desc">Read through the docs. Learn about switches, PCBs, keycaps, and how it all fits together.</p>
             </div>
           </li>
@@ -285,6 +285,11 @@ import Footer from '../components/Footer.astro';
     font-size: clamp(1.1rem, 2vw, 1.4rem);
     margin-bottom: 0.5rem;
     letter-spacing: 0.06em;
+  }
+
+  .step__link {
+    color: var(--purple-royal);
+    text-decoration: underline;
   }
 
   .step__desc {

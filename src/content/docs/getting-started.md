@@ -33,4 +33,4 @@ No prior experience required. If you can hold a soldering iron, you can do this.
 
 ## Next Steps
 
-Start by [setting up your GitHub repo](/docs/github-repo), then check out the [Grants](/docs/kit-contents) page to see what parts you are allowed to use.
+Start by [setting up your GitHub repo](/docs/github-repo), then check out the [Grants](/docs/grants) page to see what parts you are allowed to use.
