@@ -53,7 +53,7 @@ A wiring pattern that connects many switches using fewer wires than if each swit
 <details>
 <summary><strong>GPIO (General Purpose Input/Output)</strong></summary>
 
-The physical pins on the Raspberry Pi Pico that you connect things to. The Pico has 29 of them, and they're how the microcontroller talks to your switches, LEDs, and other components.
+The physical pins on the Raspberry Pi Pico that you connect things to. The Pico has 26 of them available, and they're how the microcontroller talks to your switches, LEDs, and other components.
 
 </details>
 

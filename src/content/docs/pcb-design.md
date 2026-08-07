@@ -40,7 +40,7 @@ The **Pico** is the microcontroller, the "brain" of the keyboard. It reads the s
 
 The Pico solders directly onto your PCB through-hole. Its USB-C port will hang off the edge of the board slightly so you can plug a cable in.
 
-It has **29 GPIO pins**, which is why we use a matrix. A 60% keyboard has far more keys than available pins.
+It has **26 available GPIO pins**, which is why we use a matrix. A 60% keyboard has far more keys than available pins.
 
 ### Diodes (1N4148)
 
